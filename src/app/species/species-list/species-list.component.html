@@ -1,13 +1,16 @@
-<div>
-    Exemplo de carregamento da lista de speciees
-    <ul>
-        <li *ngFor="let specie of species">
-            {{specie.title}}<br> {{specie.episode_id}}
-            <br> {{specie.opening_crawl}}
-            <br> {{specie.director}}
-            <br> {{specie.producer}}
-            <br> {{specie.release_date}}
-            <br>
-        </li>
-    </ul>
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let specie of species" class="col-md-3 mb-3">
+            <div class="card">
+                <img class="card-img-top" style="width: 240px; height: 240px; margin-left: 70px;" src="../../../assets/img/default-species.png">
+                <div class="card-body">
+                    <h5 class="card-title">{{specie.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Linguagem: {{specie.language}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Classificação: {{specie.classification}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Designo: {{specie.designation}}</h6>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

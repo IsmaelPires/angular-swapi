@@ -9,16 +9,15 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'people',
-    component: PeopleListComponent, data: { title: 'Heroes List' }
+    component: PeopleListComponent, data: { title: 'People List' }
   }
-
 ];
 
 @NgModule({
   declarations: [PeopleListComponent],
   imports: [
     CommonModule, GenericModule, HttpClientModule,
-    RouterModule.forRoot(routes, { enableTracing: true})
+    RouterModule.forRoot(routes, { enableTracing: true })
   ],
   exports: [PeopleListComponent]
 })

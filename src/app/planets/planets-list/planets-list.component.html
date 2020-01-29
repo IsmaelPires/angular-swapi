@@ -1,13 +1,17 @@
-<div>
-    Exemplo de carregamento da lista de plaes
-    <ul>
-        <li *ngFor="let plan of plans">
-            {{planet.title}}<br> {{planet.episode_id}}
-            <br> {{planet.opening_crawl}}
-            <br> {{planet.director}}
-            <br> {{planet.producer}}
-            <br> {{planet.release_date}}
-            <br>
-        </li>
-    </ul>
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let planet of planets" class="col-md-4 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="../../../assets/img/planet-default.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">{{planet.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">População: {{planet.population}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Gravidade: {{planet.gravity}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Diametro: {{planet.diameter}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Período de Órbita: {{planet.orbital_period}}</h6>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

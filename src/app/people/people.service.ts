@@ -11,19 +11,20 @@ import { IGenericOperations } from '../generic/igeneric-operations';
   providedIn: 'root'
 })
 export class PeopleService implements IGenericOperations<People, number>{
-  endpoint = environment.URL_API+"people";
-constructor(private http: HttpClient) { }
-post(data: People) {
-  console.log("Entrou dentro do serviço PeopleService - método POST");
-  this.http.post(this.endpoint, data);
+  endpoint = environment.URL_API + "people";
+  constructor(private http: HttpClient) { }
+
+  post(data: People) {
+    console.log("Entrou dentro do serviço PeopleService - método POST");
+    this.http.post(this.endpoint, data);
   }
-  put(id?: number, data?:  People) {
+  put(id?: number, data?: People) {
     console.log("Entrou dentro do serviço PeopleService - método Put");
-    this.http.put(this.endpoint+"/"+id,data);  
+    this.http.put(this.endpoint + "/" + id, data);
   }
-  patch(id?: number, data?:  People) {
+  patch(id?: number, data?: People) {
     console.log("Entrou dentro do serviço PeopleService - método Patch");
-    this.http.patch(this.endpoint+"/"+id,data);
+    this.http.patch(this.endpoint + "/" + id, data);
   }
   get(): Observable<IGenericResource<People>> {
     console.log("Entrou dentro do serviço PeopleService - método GET");
@@ -31,11 +32,10 @@ post(data: People) {
   }
   getById(id?: number): Observable<People> {
     console.log("Entrou dentro do serviço PeopleService - método GetById");
-    return this.http.get<People>(this.endpoint+"/"+id);  
-    }
+    return this.http.get<People>(this.endpoint + "/" + id);
+  }
   delete(id?: number) {
     console.log("Entrou dentro do serviço PeopleService - método DELETE");
-    this.http.delete(this.endpoint+"/"+id);
-    }
-
+    this.http.delete(this.endpoint + "/" + id);
+  }
 }

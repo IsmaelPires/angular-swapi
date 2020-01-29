@@ -10,17 +10,17 @@ import { PlanetsService } from '../planets.service';
 export class PlanetsListComponent implements OnInit {
 
   planets: Planets[];
-​
+
   //Injeção de dependência do serviço no componente
-  constructor(private service : PlanetsService) { }
-​
+  constructor(private service: PlanetsService) { }
+
   ngOnInit() {
     this.getAll();
   }
-​
+
   //Método que vai assinar (subscribe) a consulta
   //quando houver resultado os dados serao armazenas num array
-  getAll(){
+  getAll() {
     this.service.get().subscribe(
       resultado => this.planets = resultado.results,
       error => /* Tratamos erros aqui :) */console.log(error));

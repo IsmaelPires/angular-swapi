@@ -11,31 +11,32 @@ import { IGenericOperations } from '../generic/igeneric-operations';
   providedIn: 'root'
 })
 export class StarshipsService implements IGenericOperations<Starships, number>{
-  endpoint = environment.URL_API+"Starships";
+  endpoint = environment.URL_API + "starships";
   constructor(private http: HttpClient) { }
+  
   post(data: Starships) {
     console.log("Entrou dentro do serviço StarshipsService - método POST");
     this.http.post(this.endpoint, data);
-    }
-    put(id?: number, data?:  Starships) {
-      console.log("Entrou dentro do serviço StarshipsService - método Put");
-      this.http.put(this.endpoint+"/"+id,data);  
-    }
-    patch(id?: number, data?:  Starships) {
-      console.log("Entrou dentro do serviço StarshipsService - método Patch");
-      this.http.patch(this.endpoint+"/"+id,data);
-    }
-    get(): Observable<IGenericResource<Starships>> {
-      console.log("Entrou dentro do serviço FilmeService - método Get");
-      return this.http.get<IGenericResource<Starships>>(this.endpoint);  
-      }
-    getById(id?: number): Observable<Starships> {
-      console.log("Entrou dentro do serviço StarshipsService - método GetById");
-      return this.http.get<Starships>(this.endpoint+"/"+id);  
-      }
-    delete(id?: number) {
-      console.log("Entrou dentro do serviço StarshipsService - método DELETE");
-      this.http.delete(this.endpoint+"/"+id);
-      }
+  }
+  put(id?: number, data?: Starships) {
+    console.log("Entrou dentro do serviço StarshipsService - método Put");
+    this.http.put(this.endpoint + "/" + id, data);
+  }
+  patch(id?: number, data?: Starships) {
+    console.log("Entrou dentro do serviço StarshipsService - método Patch");
+    this.http.patch(this.endpoint + "/" + id, data);
+  }
+  get(): Observable<IGenericResource<Starships>> {
+    console.log("Entrou dentro do serviço FilmeService - método Get");
+    return this.http.get<IGenericResource<Starships>>(this.endpoint);
+  }
+  getById(id?: number): Observable<Starships> {
+    console.log("Entrou dentro do serviço StarshipsService - método GetById");
+    return this.http.get<Starships>(this.endpoint + "/" + id);
+  }
+  delete(id?: number) {
+    console.log("Entrou dentro do serviço StarshipsService - método DELETE");
+    this.http.delete(this.endpoint + "/" + id);
+  }
 
 }

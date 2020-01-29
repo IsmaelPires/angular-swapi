@@ -1,13 +1,15 @@
-<div>
-    Exemplo de carregamento da lista de vehiclees
-    <ul>
-        <li *ngFor="let vehicle of vehicles">
-            {{vehicle.title}}<br> {{vehicle.episode_id}}
-            <br> {{vehicle.opening_crawl}}
-            <br> {{vehicle.director}}
-            <br> {{vehicle.producer}}
-            <br> {{vehicle.release_date}}
-            <br>
-        </li>
-    </ul>
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let vehicle of vehicles" class="col-md-3 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="../../../assets/img/default-vehicle.png">
+                <div class="card-body">
+                    <h5 class="card-title">{{vehicle.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Passageiros: {{vehicle.passengers}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Modelo: {{vehicle.model}}</h6>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -4,13 +4,20 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { GenericModule } from '../generic/generic.module';
 import { VehiclesListComponent } from './vehicles-list/vehicles-list.component';
+import { RouterModule, Routes } from '@angular/router';
 
-
+const routes: Routes = [
+  {
+    path: 'vehicles',
+    component: VehiclesListComponent, data: { title: 'Vehicles List' }
+  }
+];
 
 @NgModule({
   declarations: [VehiclesListComponent],
   imports: [
-    CommonModule, GenericModule, HttpClientModule
+    CommonModule, GenericModule, HttpClientModule,
+    RouterModule.forRoot(routes, { enableTracing: true })
   ]
 })
 export class VehiclesModule { }

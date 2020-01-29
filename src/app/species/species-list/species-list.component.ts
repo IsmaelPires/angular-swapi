@@ -10,20 +10,20 @@ import { SpeciesService } from '../species.service';
 export class SpeciesListComponent implements OnInit {
 
   species: Species[];
-​
+
   //Injeção de dependência do serviço no componente
-  constructor(private service : SpeciesService) { }
-​
+  constructor(private service: SpeciesService) { }
+
   ngOnInit() {
     this.getAll();
   }
-​
+
   //Método que vai assinar (subscribe) a consulta
   //quando houver resultado os dados serao armazenas num array
-  getAll(){
+  getAll() {
     this.service.get().subscribe(
       resultado => this.species = resultado.results,
       error => /* Tratamos erros aqui :) */console.log(error));
   }
-​
+
 }

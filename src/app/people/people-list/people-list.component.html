@@ -1,13 +1,14 @@
 <div class="container-fluid">
     <div class="row">
-        <div *ngFor="let person of people" class="col-md-4 mb-3">
+        <div *ngFor="let person of people" class="col-md-2 mb-3">
             <div class="card">
+                <img class="card-img-top" style="width: 200px; height: 200px; margin-left: 23px;" src="../../../assets/img/default-people.png">
                 <div class="card-body">
-                    <h5 class="card-title">{{ person.name}}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Nascimento: {{ person.birth_year}}</h6>
-                    <p class="card-text">Especie: {{person.species}} ;Veiculos: {{person.vehicles}};Naves: {{person.starships}}</p>
-                    <a href="#" class="card-link">card-link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <h5 class="card-title">{{person.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Nascimento: {{person.birth_year}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Sexo: {{person.gender}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Altura: {{person.height}}</h6>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
                 </div>
             </div>
         </div>

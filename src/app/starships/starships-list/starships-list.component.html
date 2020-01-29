@@ -1,13 +1,15 @@
-<div>
-    Exemplo de carregamento da lista de starshipes
-    <ul>
-        <li *ngFor="let starship of starships">
-            {{starship.title}}<br> {{starship.episode_id}}
-            <br> {{starship.opening_crawl}}
-            <br> {{starship.director}}
-            <br> {{starship.producer}}
-            <br> {{starship.release_date}}
-            <br>
-        </li>
-    </ul>
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let starship of starships" class="col-md-3 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="../../../assets/img/default-starship.jpeg">
+                <div class="card-body">
+                    <h5 class="card-title">{{starship.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Passageiros: {{starship.passengers}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Modelo: {{starship.model}}</h6>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

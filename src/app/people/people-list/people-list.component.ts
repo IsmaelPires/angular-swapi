@@ -10,20 +10,20 @@ import { PeopleService } from '../people.service';
 export class PeopleListComponent implements OnInit {
 
   people: People[];
-​
+
   //Injeção de dependência do serviço no componente
-  constructor(private service : PeopleService) { }
-​
+  constructor(private service: PeopleService) { }
+
   ngOnInit() {
     this.getAll();
   }
-​
+
   //Método que vai assinar (subscribe) a consulta
   //quando houver resultado os dados serao armazenas num array
-  getAll(){
+  getAll() {
     this.service.get().subscribe(
       resultado => this.people = resultado.results,
       error => /* Tratamos erros aqui :) */console.log(error));
   }
-​
+
 }
